@@ -1,5 +1,3 @@
-# Hi, I'm SiN
-
 <div align="center">
 <pre>
       ___                       ___     
@@ -16,82 +14,137 @@
 </pre>
 </div>
 
-## About Me:
-
-- Android modder and Windows tinkerer. I build things that remove the parts of apps nobody asked for.
-- Author of the **HideAds** LSPosed module family: [GmailHideAds](https://github.com/MrxSiN/GmailHideAds), [TwitterHideAds](https://github.com/MrxSiN/TwitterHideAds), and [ThreadsHideAds](https://github.com/MrxSiN/ThreadsHideAds) — each one strips sponsored content before it ever reaches the screen.
-- I work close to the runtime: Xposed/LSPosed hooks, smali reading, and Java bytecode patching on obfuscated release builds.
-- On the desktop side I write Windhawk mods, ReShade/GShade shader presets, and Hyprland shell configs.
-- I also maintain [modern_inverted_mouse](https://github.com/MrxSiN/modern_inverted_mouse), a redesign of the classic inverted Windows cursors for Windows 10/11.
-- Dota 2 tooling on the side: [SmartCast](https://github.com/MrxSiN/DoTA2-SmartCast) and a [super-compact keybind layout](https://github.com/MrxSiN/super-compact-dota2-keybinds).
-- Everything I publish is GPL or MIT. If it works on my machine, it ships with the source.
-
-## Skill Set:
-
-<table><tr><td valign="top" width="33%">
-
-### Android
-<a href="https://github.com/MrxSiN">
 <div align="center">
-       <img src="https://skillicons.dev/icons?i=java,kotlin,androidstudio,gradle,idea&perline=4" />
-</div>
-</a>
- </td><td valign="top" width="33%">
 
-### Languages
-<a href="https://github.com/MrxSiN">
-<div align="center">
-       <img src="https://skillicons.dev/icons?i=java,kotlin,cpp,qt,bash,powershell,lua&perline=4" />
-</div>
-</a>
+### Android Systems · Runtime Modification · Open Source
 
-</td><td valign="top" width="33%">
-
-### Others
-<a href="https://github.com/MrxSiN">
-<div align="center">
-       <img src="https://skillicons.dev/icons?i=git,github,linux,windows,vscode,neovim,arch&perline=4" />
-</div>
-</a>
-</td>
-</tr></table>
-
-## Connect with me:
-<div align="center">
-    <a target="_blank" href="mailto:mrxsin@gmail.com"><img src="https://img.shields.io/badge/-mrxsin@gmail.com-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
-    <a href="https://github.com/MrxSiN" target="_blank"><img src="https://img.shields.io/badge/-MrxSiN-181717?style=flat&logo=GitHub&logoColor=white"/></a>
-    <a href="https://github.com/MrxSiN?tab=repositories" target="_blank"><img src="https://img.shields.io/badge/-LSPosed%20Modules-3DDC84?style=flat&logo=Android&logoColor=white"/></a>
-</div>
-
- ## Github Stats:
-<p align="center">
-    <a href="https://github.com/MrxSiN">
-        <img height="180em" src="https://github-readme-stats.vercel.app/api?username=MrxSiN&show_icons=true&theme=onedark&include_all_commits=true&count_private=true&hide_border=true"/>
-        <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MrxSiN&langs_count=8&layout=compact&theme=onedark&include_all_commits=true&count_private=true&hide_border=true" />
-    </a>
-</p>
-<!-- Activity Graph -->
-<p align="center">
-  <a href="https://github.com/MrxSiN">
-    <img height=250 src="https://github-readme-activity-graph.vercel.app/graph?username=MrxSiN&bg_color=282c34&color=FDFD96&line=FDFD96&point=FFFFFF&area_color=79FE96&border_radius=24.5&title_color=FDFD96"/>
-  </a>
-</p>
-
- <p align="center">
-   <a href="https://github.com/MrxSiN">
-     <img width="80%" src="https://streak-stats.demolab.com/?user=MrxSiN&show_icons=true&locale=en&theme=onedark&hide_border=true" />
-   </a>
- </p>
+I build focused tools around Android internals, runtime hooking,
+reverse engineering, and desktop customization.
 
 <br>
 
-<div id="header" align="center">
+[![Android](https://img.shields.io/badge/Android-Systems-3DDC84?style=flat-square\&logo=android\&logoColor=white)](https://github.com/MrxSiN)
+[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square\&logo=kotlin\&logoColor=white)](https://github.com/MrxSiN)
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square\&logo=openjdk\&logoColor=white)](https://github.com/MrxSiN)
+[![Xposed](https://img.shields.io/badge/Xposed%20%2F%20libxposed-Runtime_Hooking-555555?style=flat-square)](https://github.com/MrxSiN)
+[![Open Source](https://img.shields.io/badge/Open%20Source-181717?style=flat-square\&logo=github\&logoColor=white)](https://github.com/MrxSiN)
 
-  <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=MrxSiN&theme=onedark&no-frame=true&column=7" alt="MrxSiN" /></a> </p>
-
-  <img src="https://komarev.com/ghpvc/?username=MrxSiN&style=for-the-badge&color=orange" alt=""/>
 </div>
 
-<h2  align="center">💻 Check Out My Repos ⬇️ </h2>
+---
 
-#
+## About Me
+
+I'm an Android systems developer and tinkerer interested in changing software **at the layer where its behaviour is actually defined**.
+
+Most of my Android work involves runtime modification with **Xposed / libxposed**, navigating platform and application internals, and building modifications that integrate with the host rather than placing another interface on top of it.
+
+That often means working with obfuscated release builds, undocumented APIs, reflection, bytecode, SystemUI, launcher internals, and compatibility changes between Android releases.
+
+Outside Android, I experiment with Windows modifications, shaders, Linux desktop environments, automation, and small utilities that improve the software I use every day.
+
+---
+
+## Engineering Interests
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Android Internals
+
+* Xposed / LSPosed / libxposed
+* SystemUI & launcher internals
+* Runtime hooks & reflection
+* Android framework behaviour
+* Native-feeling system modifications
+
+</td>
+<td width="50%" valign="top">
+
+### Reverse Engineering
+
+* Obfuscated production builds
+* Smali & Java bytecode
+* Runtime inspection
+* Host API discovery
+* Version compatibility analysis
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### Reliability
+
+* Feature-level isolation
+* Compatibility contracts
+* Graceful failure
+* Diagnostics & recovery
+* Automated build validation
+
+</td>
+<td width="50%" valign="top">
+
+### Desktop & Tooling
+
+* Windows customization
+* Windhawk
+* ReShade / shader tooling
+* Hyprland
+* Automation & utilities
+
+</td>
+</tr>
+</table>
+
+---
+
+## Toolbox
+
+<div align="center">
+
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square\&logo=kotlin\&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square\&logo=openjdk\&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square\&logo=android\&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square\&logo=gradle\&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square\&logo=githubactions\&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square\&logo=git\&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square\&logo=linux\&logoColor=black)
+![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat-square\&logo=windows11\&logoColor=white)
+
+</div>
+
+---
+
+## How I Build
+
+**Integrate, don't imitate.**
+When possible, modifications belong inside the application's existing workflow and UI rather than behind a separate configuration surface.
+
+**Assume internals will change.**
+Runtime modifications depend on code outside their control. Compatibility checks, diagnostics, and graceful failure are part of the feature—not an afterthought.
+
+**Keep changes focused.**
+A modification should do its job, be reversible, and avoid changing unrelated behaviour.
+
+**Source over mystery.**
+I prefer tools that can be inspected, understood, modified, and built by the people using them.
+
+---
+
+<div align="center">
+
+### Currently interested in
+
+**Pixel Launcher & SystemUI internals · modern libxposed · resilient runtime modifications**
+
+<br>
+
+[![Email](https://img.shields.io/badge/Email-mrxsin%40gmail.com-EA4335?style=flat-square\&logo=gmail\&logoColor=white)](mailto:mrxsin@gmail.com)
+
+<sub>Malaysia 🇲🇾 · Building software the way I want it to behave.</sub>
+
+</div>
+
