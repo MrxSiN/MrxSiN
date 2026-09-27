@@ -5,7 +5,7 @@
 Free-to-play apps sold me the silence as a subscription, so through the back I went;<br>
 Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscated builds and bad ideas;<br>
 
-- ⚙️ I use daily: `.bf`, `.c`, `.kt`, `.java`, `.cs`, `.py` — listed in descending order of regret, see chart below
+- ⚙️ I use daily: <!-- langs:start -->`.bf`, `.c`, `.kt`, `.java`, `.cs`, `.py`<!-- langs:end --> — listed in descending order of regret, see chart below
 - 📵 Ads don't get blocked here, they get hooked out of the render path and never happen
 - 🔁 Every patch renames everything to `a`, `b`, `c`, then `a` again, and back into the bytecode I go
 - 🧾 I have read more obfuscated smali than books this year and it is only getting worse
@@ -13,7 +13,7 @@ Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscat
 
 ---
 
-#### 🧠 Brainfuck — ✅ Recommended · 11,204 hrs on record (4 hrs at review time)
+#### 🧠 Brainfuck — ✅ Recommended · <!-- hours:start -->21,567 hrs on record (31 hrs at review time)<!-- hours:end -->
 
 > In Early Access since 1993. Dev shipped 8 commands and walked out. No updates. No roadmap. Respect.
 >
@@ -33,3 +33,5 @@ Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscat
 ---
 
 <img src="https://github-readme-stats-salesp07.vercel.app/api/top-langs/?username=MrxSiN&layout=compact&langs_count=6&theme=github_dark&hide_border=true" alt="Most used languages" />
+
+<sub>Hours are real: 1 hr per KB of Brainfuck I've committed, review-time hours are commits from the last 14 days. The language list above is sorted by the same data as the chart. Both refresh daily on their own.</sub>
