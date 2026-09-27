@@ -9,7 +9,7 @@ Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscat
 - 📵 Ads don't get blocked here, they get hooked out of the render path and never happen
 - 🔁 Every patch renames everything to `a`, `b`, `c`, then `a` again, and back into the bytecode I go
 - 🧾 I have read more obfuscated smali than books this year and it is only getting worse
-- 💬 `ping` me about **xposed**, **reverse engineering**, **obfuscated builds**, & **why my main language is brainfuck**
+- 💬 `ping` me about **xposed**, **reverse engineering**, **obfuscated builds**, or **why I still write Brainfuck on purpose**
 
 ---
 
