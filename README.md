@@ -2,14 +2,14 @@
 
 #### An Android runtime modder by day ☼ and a Brainfuck apologist by night ☾
 
-Free-to-play apps sold me the silence as a subscription, so I went in through the back instead;<br>
-Based in Malaysia 🇲🇾, 81% Brainfuck by volume, the rest is `smali`, obfuscated builds and bad ideas;<br>
+Free-to-play apps sold me the silence as a subscription, so through the back I went;<br>
+Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscated builds and bad ideas;<br>
 
 - ⚙️ I use daily: `.bf`, `.c`, `.kt`, `.java`, `.cs`, `.py` — listed in descending order of regret, see chart below
 - 📵 Ads don't get blocked here, they get hooked out of the render path and never happen
 - 🔁 Every patch renames everything to `a`, `b`, `c`, then `a` again, and back into the bytecode I go
 - 🧾 I have read more obfuscated smali than books this year and it is only getting worse
-- 💬 `ping` me about **xposed**, **reverse engineering**, **obfuscated builds**, **why my main language is brainfuck**
+- 💬 `ping` me about **xposed**, **reverse engineering**, **obfuscated builds**, & **why my main language is brainfuck**
 
 ---
 
