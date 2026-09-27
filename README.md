@@ -2,9 +2,6 @@
 
 #### An Android runtime modder by day ☼ and a Brainfuck apologist by night ☾
 
-Free-to-play apps sold me the silence as a subscription, so through the back I went;<br>
-Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscated builds and bad ideas;<br>
-
 - ⚙️ I use daily: <!-- langs:start -->`.bf`, `.c`, `.kt`, `.java`, `.cs`, `.py`<!-- langs:end --> — listed in descending order of regret, see chart below
 - 📵 Ads don't get blocked here, they get hooked out of the render path and never happen
 - 🔁 Every patch renames everything to `a`, `b`, `c`, then `a` again, and back into the bytecode I go
