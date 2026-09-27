@@ -15,9 +15,9 @@ Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscat
 
 #### 🧠 Brainfuck — ✅ Recommended · <!-- hours:start -->21,567 hrs on record (31 hrs at review time)<!-- hours:end --><br><sub>Hours are real: 1 hr per KB of Brainfuck committed, review-time hours from commits of the last 14 days.</sub>
 
-> In Early Access since 1993. Dev shipped 8 commands and walked out. No updates. No roadmap. Respect.
+> In 1993, Urban Müller shipped 8 commands and walked out. No updates. No roadmap. No support. Respect.
 >
-> No variables, no functions, no types, no error messages. One tape, one pointer, and whatever happens is on you.
+> No variables, no functions, no types, no error messages. One tape, one pointer and whatever happens is on you.
 > Started with Hello World. Miscounted one `+`. Lost six hours.
 >
 > Eventually wrote actual production logic in it. Then an optimizer. Then an AOT compiler. Then tests to prove the optimizer hadn't hallucinated. At no point did anyone stop me.
