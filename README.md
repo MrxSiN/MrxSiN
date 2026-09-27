@@ -2,22 +2,16 @@
 
 #### An Android runtime modder by day ☼ and a Brainfuck apologist by night ☾
 
+Free-to-play apps sold me the silence as a subscription, so I went in through the back instead;<br>
+Based in Malaysia 🇲🇾, fluent in `smali`, obfuscated release builds and bad ideas;<br>
+
+- ⚙️ I use daily: `.java`, `.kt`, `.smali`, `.gradle`, `.cpp`, `.bf`
+- 📵 Ads don't get blocked here, they get hooked out of the render path and never happen
+- 🔁 Every patch renames everything to `a`, `b`, `c`, then `a` again, and back into the bytecode I go
+- 🧾 I have read more obfuscated smali than books this year and it is only getting worse
+- 💬 `ping` me about **xposed**, **reverse engineering**, **obfuscated builds**, **why my main language is brainfuck**
+
 ---
-
-#### 🤖 Android — ⚠️ Mixed · 9,331 hrs on record (2 hrs at review time)
-
-> Free to play, but the ads are the gameplay loop.
->
-> Started this one because an app put sponsored posts in my timeline and offered to sell me the silence. Declined.
-> Went in through the back instead, hooked the render path, and now the ad dies before it exists. Not blocked. Not
-> greyed out with a polite little placeholder. Just never happens.
->
-> The devs patch it every few weeks. Everything gets renamed to `a`, `b`, `c`, then `a` again, and I go back into
-> the smali to find the one method that still means anything. I have read more obfuscated bytecode than books this year.
->
-> Endgame content is entirely PvP and my opponent has a build pipeline and a legal team.
->
-> 7/10 — hostile, repetitive, cannot stop playing.
 
 #### 🧠 Brainfuck — ✅ Recommended · 11,204 hrs on record (4 hrs at review time)
 
@@ -38,6 +32,4 @@
 
 ---
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MrxSiN&layout=compact&langs_count=6&theme=github_dark&hide_border=true&card_width=400" alt="Most used languages" />
-
-<sub>💬 `ping` me about **xposed**, **reverse engineering**, **obfuscated builds**, **why my main language is brainfuck**</sub>
+<img src="https://github-readme-stats-salesp07.vercel.app/api/top-langs/?username=MrxSiN&layout=compact&langs_count=6&theme=github_dark&hide_border=true" alt="Most used languages" />
