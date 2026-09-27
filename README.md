@@ -17,18 +17,18 @@ Based in Malaysia 🇲🇾, `Brainfuck` by volume, the rest is `smali`, obfuscat
 
 > In Early Access since 1993. Dev shipped 8 commands and walked out. No updates. No roadmap. Respect.
 >
-> No variables, no functions, no types, no error messages. One tape, one pointer, and whatever is left of you.
-> Spent an entire weekend on Hello World. Six of those hours were a miscounted `+`. That's on me.
+> No variables, no functions, no types, no error messages. One tape, one pointer, and whatever happens is on you.
+> Started with Hello World. Miscounted one `+`. Lost six hours.
 >
-> Ran the pointer off the end of the tape and it didn't crash — it just kept going, quietly, into memory that
-> was never mine. I didn't get a stack trace. I got a look at myself.
+> Eventually wrote actual production logic in it. Then an optimizer. Then an AOT compiler. Then tests to prove the optimizer hadn't hallucinated. At no point did anyone stop me.
+> There are no variables. You simply remember that cell 47 means something important and carry this knowledge like a family curse.
 >
-> Other languages ask what you want to build. This one asks what you're willing to lose. Java makes me write
-> a factory. Brainfuck makes me write `++++++++[>++++[>++>+++>+++>+<<<<-]` and then it makes me *mean it*.
+> Debugging is incredible. The program does not tell you what went wrong. The pointer is somewhere. You are somewhere. God is watching neither.
+> Other languages give you abstractions. Brainfuck gives you ++++++++[>++++<-] and the quiet certainty that whatever happens next is legally your responsibility.
 >
-> Syntax highlighting does nothing because there is no syntax, only weather.
+> Syntax highlighting does nothing. There is no syntax. Only weather.
 >
-> 10/10 — would `[->+<]` again.
+> 10/10. Accidentally built a toolchain.
 
 ---
 
