@@ -2,7 +2,7 @@
 
 #### An Android runtime modder by day ☼ and a Brainfuck apologist by night ☾
 
-- ⚙️ I use daily: <!-- langs:start -->`.bf`, `.kt`, `.c`, `.java`, `.cs`, `.py`<!-- langs:end --> — listed in descending order of regret, see chart below
+- ⚙️ I use daily: <!-- langs:start -->`.bf`, `.c`, `.kt`, `.java`, `.cs`, `.py`<!-- langs:end --> — listed in descending order of regret, see chart below
 - 📵 Ads don't get blocked here, they get hooked out of the render path and never happen
 - 🔁 Every patch renames everything to `a`, `b`, `c`, then `a` again, and back into the bytecode I go
 - 🧾 I have read more obfuscated smali than books this year and it is only getting worse
@@ -10,7 +10,7 @@
 
 ---
 
-#### 🧠 Brainfuck — ✅ Recommended · <!-- hours:start -->21,567 hrs on record (31 hrs at review time)<!-- hours:end --><br><sub>Hours are real: 1 hr per KB of Brainfuck committed, review-time hours from commits of the last 14 days.</sub>
+#### 🧠 Brainfuck — ✅ Recommended · <!-- hours:start -->27,271 hrs on record (35 hrs at review time)<!-- hours:end --><br><sub>Hours are real: 1 hr per KB of Brainfuck committed, review-time hours from commits of the last 14 days.</sub>
 
 > In 1993, Urban Müller shipped 8 commands and walked out. No updates. No roadmap. No support. Respect.
 >
