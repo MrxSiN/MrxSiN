@@ -2,7 +2,7 @@
 
 #### An Android runtime modder by day ☼ and a Brainfuck apologist by night ☾
 
-- ⚙️ I use daily: <!-- langs:start -->`.bf`, `.c`, `.kt`, `.java`, `.cs`, `.py`<!-- langs:end --> — listed in descending order of regret, see chart below
+- ⚙️ I use daily: <!-- langs:start -->`.bf`, `.py`, `.c`, `.kt`, `.java`, `.cs`<!-- langs:end --> — listed in descending order of regret, see chart below
 - 📵 Ads don't get blocked here, they get hooked out of the render path and never happen
 - 🔁 Every patch renames everything to `a`, `b`, `c`, then `a` again, and back into the bytecode I go
 - 🧾 I have read more obfuscated smali than books this year and it is only getting worse
