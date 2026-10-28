@@ -10,7 +10,7 @@
 
 ---
 
-#### 🧠 Brainfuck — ✅ Recommended · <!-- hours:start -->32,574 hrs on record (83 hrs at review time)<!-- hours:end --><br><sub>Hours are real: 1 hr per KB of Brainfuck committed, review-time hours from commits of the last 14 days.</sub>
+#### 🧠 Brainfuck — ✅ Recommended · <!-- hours:start -->32,574 hrs on record (84 hrs at review time)<!-- hours:end --><br><sub>Hours are real: 1 hr per KB of Brainfuck committed, review-time hours from commits of the last 14 days.</sub>
 
 > In 1993, Urban Müller shipped 8 commands and walked out. No updates. No roadmap. No support. Respect.
 >
