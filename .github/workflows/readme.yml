@@ -1,0 +1,185 @@
+name: Update README (Brainfuck)
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/*.bf'
+      - '.github/workflows/readme.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-brainfuck
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout using Git (no Node-based actions)
+        shell: bash
+        run: |
+          git clone --quiet --depth=1 --branch "${GITHUB_REF_NAME}" \
+            "https://github.com/${GITHUB_REPOSITORY}.git" .
+
+      - name: Install system Brainfuck interpreter
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends beef jq
+
+      - name: Refresh README using Brainfuck
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USER: MrxSiN
+        run: |
+          set -euo pipefail
+          export LC_ALL=C
+          tmp="$(mktemp -d)"
+          trap 'rm -rf "$tmp"' EXIT
+
+          # Host-side GitHub HTTP I/O. Only program source is .bf.
+          gh_get() {
+            local path="$1"
+            curl --fail-with-body --silent --show-error --location \
+              --retry 3 --max-time 60 \
+              --header 'Accept: application/vnd.github+json' \
+              --header "Authorization: Bearer ${GH_TOKEN}" \
+              --header 'X-GitHub-Api-Version: 2022-11-28' \
+              "https://api.github.com${path}"
+          }
+
+          # Unary Brainfuck input: n bytes with value 1 followed by 0.
+          # The .bf program counts these and returns three unsigned LE bytes.
+          bf_tally() {
+            local count="$1" a b c
+            if ! [[ "$count" =~ ^[0-9]+$ ]] || (( count > 16777215 )); then
+              echo "Bad/oversized Brainfuck tally: $count" >&2
+              return 1
+            fi
+            awk -v n="$count" 'BEGIN { for (i = 0; i < n; i++) printf "%c", 1; printf "%c", 0 }' > "$tmp/tally.in"
+            beef --input-file="$tmp/tally.in" --output-file="$tmp/tally.out" scripts/tally.bf > /dev/null
+            if [[ "$(wc -c < "$tmp/tally.out")" -ne 3 ]]; then
+              echo 'Brainfuck output must contain exactly three bytes' >&2
+              return 1
+            fi
+            read -r a b c < <(od -An -tu1 -v "$tmp/tally.out")
+            printf '%d\n' "$(( a + b * 256 + c * 65536 ))"
+          }
+
+          for expected in 0 1 255 256 257 65535 65536; do
+            observed="$(bf_tally "$expected")"
+            [[ "$observed" == "$expected" ]] || {
+              echo "Brainfuck self-test failed at $expected: $observed" >&2
+              exit 1
+            }
+          done
+          echo 'Brainfuck counter self-test passed.'
+
+          : > "$tmp/languages.jsonl"
+          : > "$tmp/brainfuck-repos.txt"
+          repositories=0
+          page=1
+          while (( page <= 20 )); do
+            response="$(gh_get "/users/${PROFILE_USER}/repos?per_page=100&type=owner&page=${page}")"
+            jq -e 'type == "array"' <<< "$response" > /dev/null
+            size="$(jq 'length' <<< "$response")"
+            while IFS= read -r repo; do
+              [[ -n "$repo" ]] || continue
+              languages="$(gh_get "/repos/${PROFILE_USER}/${repo}/languages")"
+              jq -e 'type == "object"' <<< "$languages" > /dev/null
+              jq -c '.' <<< "$languages" >> "$tmp/languages.jsonl"
+              if (( $(jq -r '.Brainfuck // 0' <<< "$languages") > 0 )); then
+                printf '%s\n' "$repo" >> "$tmp/brainfuck-repos.txt"
+              fi
+              repositories=$((repositories + 1))
+            done < <(jq -r '.[] | select(.fork != true) | .name' <<< "$response")
+            if (( size < 100 )); then break; fi
+            page=$((page + 1))
+          done
+          [[ "$repositories" -gt 0 ]] || { echo 'No owned non-fork repositories found' >&2; exit 1; }
+          (( page <= 20 )) || { echo 'Repository API pagination limit exceeded' >&2; exit 1; }
+
+          # Same statistics as the original .mjs: Brainfuck source bytes
+          # in the GitHub Languages API and recent commit count (14 days).
+          all_bf_bytes="$(jq -rs '[ .[] | .Brainfuck // 0 ] | add // 0' "$tmp/languages.jsonl")"
+          hour_units=$(( (all_bf_bytes + 512) / 1024 ))
+          total_hours="$(bf_tally "$hour_units")"
+
+          since="$(date -u -d '14 days ago' '+%Y-%m-%dT%H:%M:%SZ')"
+          recent=0
+          while IFS= read -r repo; do
+            [[ -n "$repo" ]] || continue
+            n_page=1
+            while (( n_page <= 20 )); do
+              commits="$(gh_get "/repos/${PROFILE_USER}/${repo}/commits?since=${since}&per_page=100&page=${n_page}")"
+              jq -e 'type == "array"' <<< "$commits" > /dev/null
+              count="$(jq 'length' <<< "$commits")"
+              recent=$((recent + count))
+              if (( count < 100 )); then break; fi
+              n_page=$((n_page + 1))
+            done
+            (( n_page <= 20 )) || { echo "Commit pagination exceeded for $repo" >&2; exit 1; }
+          done < "$tmp/brainfuck-repos.txt"
+          review_count="$(bf_tally "$recent")"
+
+          LANG_TEXT="$(jq -rs '
+            def ext:
+              if . == "Brainfuck" then "bf"
+              elif . == "C++" then "cpp"
+              elif . == "C#" then "cs"
+              elif . == "JavaScript" then "js"
+              elif . == "TypeScript" then "ts"
+              elif . == "Kotlin" then "kt"
+              elif . == "Python" then "py"
+              elif . == "PowerShell" then "ps1"
+              elif . == "Shell" then "sh"
+              else ascii_downcase | gsub("[^a-z0-9]"; "") end;
+            [ .[] | to_entries[] ]
+            | group_by(.key)
+            | map({ key: .[0].key, value: (map(.value) | add) })
+            | sort_by(-.value, .key)
+            | .[:6]
+            | map("`." + (.key | ext) + "`")
+            | join(", ")
+          ' "$tmp/languages.jsonl")"
+          HOURS_TEXT="$(printf "%s" "$total_hours" | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta') hrs on record (${review_count} hrs at review time)"
+          export LANG_TEXT HOURS_TEXT
+
+          # Check marker uniqueness, then edit temporary file atomically.
+          for marker in '<!-- langs:start -->' '<!-- langs:end -->' '<!-- hours:start -->' '<!-- hours:end -->'; do
+            [[ "$(grep -Foc "$marker" README.md)" == 1 ]] || {
+              echo "README marker missing or duplicated: $marker" >&2
+              exit 1
+            }
+          done
+          perl -0777 -pe '
+            s{(<!-- langs:start -->).*?(<!-- langs:end -->)}{$1.$ENV{LANG_TEXT}.$2}se;
+            s{(<!-- hours:start -->).*?(<!-- hours:end -->)}{$1.$ENV{HOURS_TEXT}.$2}se;
+          ' README.md > "$tmp/README.md"
+          mv "$tmp/README.md" README.md
+          echo "Updated profile statistics: ${total_hours} BF hours, ${review_count} recent commits"
+
+      - name: Commit and push if README changed
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- README.md; then
+            echo 'No README change.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m 'chore: refresh README stats (Brainfuck)'
+          auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git -c "http.extraheader=AUTHORIZATION: basic ${auth}" push \
+            origin "HEAD:refs/heads/${GITHUB_REF_NAME}"
